@@ -4,7 +4,10 @@
  * npm i  
  * npm run sass 
  * cd dist/ 
- * lite-server . 
+ * lite-server .  
+ 
+ ## sass: 
+  * only edit sass file 
 
 
 
