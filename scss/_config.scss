@@ -10,7 +10,7 @@ $background-opacity: 0.5;
 }
 
 @mixin background {
-    @if $show-home-image {
+    @if $show-home-image {.bio-image
         //if show image home is true
         &#bg-img {
             background: $home-image;
