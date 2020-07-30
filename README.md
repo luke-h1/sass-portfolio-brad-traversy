@@ -1,4 +1,6 @@
 # portfolio
+ * for testing SASS 
+
 
 ## local setup: 
  * npm i  
