@@ -1,0 +1,46 @@
+// Menu button
+
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: #fff;
+        @include easeOut;
+    }
+
+    // rotate menu button into an X with menu lines
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            // make into X select each one
+            // line 1 - rotate
+            // line 2 - hide line 2
+            // line 3 - rotate
+
+            &:nth-child(1) {
+                // background: blue ;
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            &:nth-child(2) {
+                // hide 2nd line
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
+
+// restart node sasss
