@@ -1,31 +1,18 @@
+// IMPORT CONFIG PARTIALS 
+@import 'config' ; 
+
+
+
+
 // VARIABLES 
 $primary-color: #444;
 $secondary-color: #eece1a ; 
 $show-home-image: true ; 
 $home-image: url(/static/my-work/img1.jpeg);
-$background-opacity: 0.9; 
+$background-opacity: 0.5; 
 
 
-// EASE OUT 
-@mixin easeOut{
-    transition: all 0.5s ease-out; // transition color of icons ease out 
 
-}
-
-@mixin background{ 
-    @if $show-home-image { //if show image home is true 
-        &#bg-img { 
-            background: $home-image; 
-            background-attachment: fixed; // 
-            background-size: cover; 
-            .overlay {
-                position: absolute;
-            }
-        }
-
-        
-    }
-}
 
 * {
     box-sizing: border-box;
