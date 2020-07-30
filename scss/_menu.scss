@@ -12,7 +12,8 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #fff;
+        // background: #fff; 
+        background: set-text-color($primary-color);
         @include easeOut;
     }
 
@@ -43,111 +44,108 @@
     }
 }
 
-// Menu overlay 
+// Menu overlay
 
-.menu { // hide menu items 
+.menu {
+    // hide menu items
     position: fixed;
-    top: 0 ; 
-    width: 100% ; 
-    opacity: 0.9; // opacity for menu 
-    visibility: hidden; 
+    top: 0;
+    width: 100%;
+    opacity: 0.9; // opacity for menu
+    visibility: hidden;
 
-    &.show { //show menu items 
+    &.show {
+        //show menu items
         visibility: visible;
     }
 
-    &-branding, &-nav { // add branding class + nav class 
-        display: flex ;  
+    &-branding,
+    &-nav {
+        // add branding class + nav class
+        display: flex;
         flex-flow: column wrap;
-        align-items: center ;
+        align-items: center;
         justify-content: center;
-        float: left ; 
-        width: 50% ; 
+        float: left;
+        width: 50%;
         height: 100vh;
-        overflow: hidden; // no scroll bars shown  
+        overflow: hidden; // no scroll bars shown
     }
 
-    &-nav { 
-        margin: 0 ; 
-        padding: 0 ;  
+    &-nav {
+        margin: 0;
+        padding: 0;
         background: darken($primary-color, 5);
         list-style: none;
-        transform: translate3d(0,-100%,0);  
+        transform: translate3d(0, -100%, 0);
         @include easeOut;
 
-        &.show { 
-            //slide in from top: 
-            transform: translate3d(0,0,0);
+        &.show {
+            //slide in from top:
+            transform: translate3d(0, 0, 0);
         }
     }
 
-    // branding side 
-    &-branding { 
+    // branding side
+    &-branding {
         background: $primary-color;
         @include easeOut;
-        transform: translate3d(0,100%,0);  
+        transform: translate3d(0, 100%, 0);
 
-        &.show { 
-            //slide in from bottom: 
-            transform: translate3d(0,0,0);
+        &.show {
+            //slide in from bottom:
+            transform: translate3d(0, 0, 0);
         }
 
-        .portrait { 
-            width: 250px ; 
-            height: 250px ; 
-            background: url(/static/luke.png); //TO-DO 
+        .portrait {
+            width: 250px;
+            height: 250px;
+            background: url(../static/luke.png); // this should work
             border-radius: 50%;
-            object-fit: cover; 
-            border: solid 3px $secondary-color
-        }
-
-
-    }
-
-    .nav-item { 
-        transform: translate3d(600px, 0, 0); 
-        @include easeOut; 
-
-        &.show { 
-            //slide in from right: 
-            transform: translate3d(0,0,0);
-        }
-
-
-        &.current > a { 
-            color: $secondary-color ; 
+            object-fit: cover;
+            border: solid 3px $secondary-color;
         }
     }
 
-    .nav-link { 
-        display: inline-block ;  // 
-        position: relative;
-        font-size: 30px;
-        text-transform: capitalize; 
-        padding: 1rem 0; 
-        font-weight: 300; 
-        color: #fff ; 
-        font-family: inherit;
-        text-decoration: none; 
+    .nav-item {
+        transform: translate3d(600px, 0, 0);
         @include easeOut;
 
-        &:hover { 
-            color: $secondary-color;
+        &.show {
+            //slide in from right:
+            transform: translate3d(0, 0, 0);
         }
 
+        &.current > a {
+            color: $secondary-color;
+        }
     }
 
+    .nav-link {
+        display: inline-block; //
+        position: relative;
+        font-size: 30px;
+        text-transform: capitalize;
+        padding: 1rem 0;
+        font-weight: 300;
+        // color: #fff;
+        color: set-text-color($primary-color);
+        font-family: inherit;
+        text-decoration: none;
+        @include easeOut;
 
+        &:hover {
+            color: $secondary-color;
+        }
+    }
 }
 
-// JS version: 
-// for (let x = 0 ; i < 4 ; i++) {} 
+// JS version:
+// for (let x = 0 ; i < 4 ; i++) {}
 
-
-
-// for loop to delay each nav item slide by 0.1s 
+// for loop to delay each nav item slide by 0.1s
 @for $x from 1 through 4 {
-    .nav-item:nth-child(#{$x}) { 
+    .nav-item:nth-child(#{$x}) {
         transition-delay: $x * 0.1s;
     }
 }

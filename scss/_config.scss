@@ -1,7 +1,7 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
 $show-home-image: true;
-$home-image: url(/static/my-work/img1.jpeg);
+$home-image: url(../static/my-work/img1.jpeg);
 $background-opacity: 0.5;
 
 // EASE OUT
@@ -31,9 +31,17 @@ $background-opacity: 0.5;
     }
 }
 
+// set text colors 
+@function set-text-color($color){
+    @if (lightness($color) > 40) { 
+        @return #000 ; 
+    } @else { 
+        @return #fff ; 
+    }
+}
+
+
 // media query mixins (small, medium, large)
-
-
 // SMALL 
 @mixin mediaSm {
     @media screen and (max-width: 500px) {
